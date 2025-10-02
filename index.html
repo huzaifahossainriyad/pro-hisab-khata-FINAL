@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>প্রো হিসাব খাতা রিয়াদ ভাই</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Font Awesome: Using full integrity and crossorigin attributes for robustness and performance -->
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin="anonymous">
+    
+    <!-- Preload critical assets: CSS and fonts -->
+    <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer">
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/webfonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/webfonts/fa-regular-400.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/webfonts/fa-brands-400.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+
+    <!-- The actual stylesheet link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    <style>
+        /* Base styles */
+        :root {
+            /* Dark Mode is now default */
+            --sidebar-bg: rgba(10, 20, 30, 0.6);
+            --sidebar-text: #e2e8f0;
+            --sidebar-border: rgba(255, 255, 255, 0.1);
+            --sidebar-hover-bg: rgba(255, 255, 255, 0.1);
+            --sidebar-active-text: #ffffff;
+            --card-bg: rgba(10, 20, 30, 0.6);
+            --border-color: rgba(255, 255, 255, 0.15);
+            --text-color: #ffffff;
+            --hover-bg: rgba(255, 255, 255, 0.1);
+            --input-bg: rgba(0, 0, 0, 0.25);
+            --input-border: rgba(255, 255, 255, 0.2);
+            --input-focus-border: var(--primary-start);
+            --header-bg: rgba(10, 20, 30, 0.4);
+            --header-border: rgba(255, 255, 255, 0.1);
+            --main-bg: rgba(0, 0, 0, 0.2);
+
+            /* Default Theme (Blue) */
+            --primary-start: #3b82f6;
+            --primary-end: #60a5fa;
+            --secondary-start: #8b5cf6;
+            --secondary-end: #a78bfa;
+            --sidebar-active-bg: linear-gradient(to right, #3b82f6, #60a5fa);
+        }
+
+        .light {
+            --sidebar-bg: rgba(255, 255, 255, 0.65);
+            --sidebar-text: #2d3748;
+            --sidebar-border: rgba(0, 0, 0, 0.1);
+            --sidebar-hover-bg: rgba(0, 0, 0, 0.05);
+            --card-bg: rgba(255, 255, 255, 0.65);
+            --border-color: rgba(0, 0, 0, 0.08);
+            --text-color: #1a202c;
+            --hover-bg: rgba(0, 0, 0, 0.03);
+            --input-bg: rgba(255, 255, 255, 0.7);
+            --input-border: rgba(0, 0, 0, 0.1);
+            --header-bg: rgba(255, 255, 255, 0.5);
+            --header-border: rgba(0, 0, 0, 0.08);
+            --main-bg: rgba(255, 255, 255, 0.1);
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
+        }
+
+        /* Themes */
+        .theme-blue { --primary-start: #3b82f6; --primary-end: #60a5fa; --secondary-start: #8b5cf6; --secondary-end: #a78bfa; --sidebar-active-bg: linear-gradient(to right, #3b82f6, #60a5fa); }
+        .theme-green { --primary-start: #10b981; --primary-end: #34d399; --secondary-start: #f59e0b; --secondary-end: #fbbf24; --sidebar-active-bg: linear-gradient(to right, #10b981, #34d399); }
+        .theme-yellow { --primary-start: #f59e0b; --primary-end: #fbbf24; --secondary-start: #ef4444; --secondary-end: #f87171; --sidebar-active-bg: linear-gradient(to right, #f59e0b, #fbbf24); }
+        .theme-purple { --primary-start: #8b5cf6; --primary-end: #a78bfa; --secondary-start: #ec4899; --secondary-end: #f472b6; --sidebar-active-bg: linear-gradient(to right, #8b5cf6, #a78bfa); }
+        .theme-white { --primary-start: #6b7280; --primary-end: #9ca3af; --secondary-start: #4b5563; --secondary-end: #6b7280; --sidebar-active-bg: linear-gradient(to right, #6b7280, #9ca3af); }
+        .light.theme-white { --sidebar-active-text: #ffffff; --text-color: #1f2937; }
+
+        html, body, #root {
+            height: 100%;
+        }
+
+        body {
+            /* Background is now set dynamically via React */
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: var(--text-color);
+            transition: background-image 0.5s ease-in-out;
+            text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+        }
+
+        .card-glass {
+            background: var(--card-bg);
+            backdrop-filter: blur(24px);
+            -webkit-backdrop-filter: blur(24px);
+            border-radius: 1rem;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+        }
+        
+        .btn-primary-gradient {
+            background-image: linear-gradient(to right, var(--primary-start), var(--primary-end));
+            color: white;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px 0 rgba(0, 0, 0, 0.25);
+        }
+        .btn-primary-gradient:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.3);
+        }
+
+        .text-primary-gradient {
+             background: linear-gradient(to right, var(--primary-start), var(--primary-end));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .form-input {
+            background: var(--input-bg);
+            border: 1px solid var(--input-border);
+            border-radius: 0.5rem;
+            padding: 0.75rem 1rem;
+            width: 100%;
+            transition: all 0.2s ease-in-out;
+            outline: none;
+            color: var(--text-color);
+        }
+        .form-input:focus {
+            box-shadow: 0 0 0 3px var(--input-focus-border);
+            border-color: var(--input-focus-border);
+        }
+        select.form-input option {
+            background: #1a202c;
+            color: #e2e8f0;
+        }
+        
+        /* Animations */
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+        .animate-fade-in { animation: fadeIn 0.5s ease-out forwards; }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .animate-fade-in-up {
+            animation-name: fadeInUp;
+            animation-duration: 0.7s;
+            animation-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            animation-fill-mode: forwards;
+        }
+
+        @keyframes kenBurnsEffect {
+            0% { transform: scale(1.1) translate(0, 0); }
+            100% { transform: scale(1) translate(-2%, -1%); }
+        }
+        .animate-ken-burns {
+            animation: kenBurnsEffect 45s ease-in-out infinite alternate;
+        }
+
+        @keyframes pulse-slow {
+            0%, 100% { opacity: 0.5; }
+            50% { opacity: 0.7; }
+        }
+        .animate-pulse-slow {
+            animation: pulse-slow 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+
+        @keyframes fadeOut { from { opacity: 1; } to { opacity: 0; } }
+        .animate-fade-out { animation: fadeOut 0.3s ease-in forwards; }
+
+        @keyframes scaleIn { from { transform: scale(0.95); opacity: 0; } to { transform: scale(1); opacity: 1; } }
+        .animate-scale-in { animation: scaleIn 0.3s ease-out forwards; }
+
+        @keyframes scaleOut { from { transform: scale(1); opacity: 1; } to { transform: scale(0.95); opacity: 0; } }
+        .animate-scale-out { animation: scaleOut 0.3s ease-in forwards; }
+        
+        @keyframes slideInRight { from { transform: translateX(100%); opacity: 0; } to { transform: translateX(0); opacity: 1; } }
+        .animate-slide-in-right { animation: slideInRight 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards; }
+        
+        @keyframes slideOutRight { from { transform: translateX(0); opacity: 1; } to { transform: translateX(100%); opacity: 0; } }
+        .animate-slide-out-right { animation: slideOutRight 0.5s cubic-bezier(0.55, 0.085, 0.68, 0.53) forwards; }
+
+        @keyframes gradient-pan {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        .animate-gradient-pan {
+            background-size: 200% 200%;
+            animation: gradient-pan 5s ease infinite;
+        }
+
+        /* Scrollbar */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: transparent; }
+        ::-webkit-scrollbar-thumb { background: rgba(255, 255, 255, 0.2); border-radius: 10px; }
+        ::-webkit-scrollbar-thumb:hover { background: rgba(255, 255, 255, 0.4); }
+        .light ::-webkit-scrollbar-thumb { background: rgba(0, 0, 0, 0.2); }
+        .light ::-webkit-scrollbar-thumb:hover { background: rgba(0, 0, 0, 0.4); }
+
+        /* Print Styles */
+        @media print {
+            body {
+                background-image: none !important;
+                background-color: #ffffff !important;
+                text-shadow: none !important;
+                color: black !important;
+            }
+            @page {
+              size: A4;
+              margin: 1.5cm;
+            }
+            .card-glass {
+                background: transparent !important;
+                border: none !important;
+                box-shadow: none !important;
+                backdrop-filter: none !important;
+                -webkit-backdrop-filter: none !important;
+            }
+            .report-content h2 {
+                font-size: 1.5rem;
+                margin-bottom: 1rem;
+            }
+            .report-content table {
+                font-size: 10pt;
+                width: 100%;
+                border-collapse: collapse;
+            }
+            .report-content th, .report-content td {
+                border: 1px solid #ccc !important;
+                padding: 6px;
+            }
+            .report-content thead {
+                background-color: #eee !important;
+            }
+        }
+    </style>
+
+    <script type="importmap">
+{
+  "imports": {
+    "recharts": "https://aistudiocdn.com/recharts@^3.2.1",
+    "react/": "https://aistudiocdn.com/react@^19.1.1/",
+    "react": "https://aistudiocdn.com/react@^19.1.1",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.1.1/",
+    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.20.0"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+<body class="font-sans">
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+</body>
+</html>

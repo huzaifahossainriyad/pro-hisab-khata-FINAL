@@ -1,0 +1,148 @@
+import { ColorMode, Background } from './types';
+
+const unsplashUrl = (id: string, width: number, quality: number) => `https://images.unsplash.com/${id}?q=${quality}&w=${width}&auto=format&fit=crop`;
+
+export const BACKGROUNDS: Background[] = [
+    // --- Dark Nature Themes ---
+    {
+        id: 'dark-1',
+        url: unsplashUrl('photo-1472214103451-9374bd1c798e', 2070, 80),
+        thumbnailUrl: unsplashUrl('photo-1472214103451-9374bd1c798e', 200, 80),
+        type: ColorMode.Dark,
+        alt: 'Green hills under a dark sky',
+    },
+    {
+        id: 'dark-2',
+        url: unsplashUrl('photo-1444703686981-a3abbc4d42e6', 2070, 80),
+        thumbnailUrl: unsplashUrl('photo-1444703686981-a3abbc4d42e6', 200, 80),
+        type: ColorMode.Dark,
+        alt: 'Milky way over a silhouette of trees',
+    },
+    {
+        id: 'dark-3',
+        url: unsplashUrl('photo-1506744038136-46273834b3fb', 2070, 80),
+        thumbnailUrl: unsplashUrl('photo-1506744038136-46273834b3fb', 200, 80),
+        type: ColorMode.Dark,
+        alt: 'Misty mountains at sunset',
+    },
+    {
+        id: 'dark-4',
+        url: unsplashUrl('photo-1487017159836-4e23a8e4425e', 2070, 80),
+        thumbnailUrl: unsplashUrl('photo-1487017159836-4e23a8e4425e', 200, 80),
+        type: ColorMode.Dark,
+        alt: 'Dark forest path with light rays',
+    },
+    {
+        id: 'dark-5',
+        url: unsplashUrl('photo-1475113548554-5a36f1f523d6', 2070, 80),
+        thumbnailUrl: unsplashUrl('photo-1475113548554-5a36f1f523d6', 200, 80),
+        type: ColorMode.Dark,
+        alt: 'Northern lights over a snowy landscape',
+    },
+    {
+        id: 'dark-6',
+        url: unsplashUrl('photo-1469474968028-56623f02e42e', 2070, 80),
+        thumbnailUrl: unsplashUrl('photo-1469474968028-56623f02e42e', 200, 80),
+        type: ColorMode.Dark,
+        alt: 'Dramatic mountain peak landscape',
+    },
+    {
+        id: 'dark-7',
+        url: unsplashUrl('photo-1534086119154-8a623c21a156', 2070, 80),
+        thumbnailUrl: unsplashUrl('photo-1534086119154-8a623c21a156', 200, 80),
+        type: ColorMode.Dark,
+        alt: 'Stormy ocean waves',
+    },
+    {
+        id: 'dark-8',
+        url: unsplashUrl('photo-1437422061949-f6efbde7ae3f', 2070, 80),
+        thumbnailUrl: unsplashUrl('photo-1437422061949-f6efbde7ae3f', 200, 80),
+        type: ColorMode.Dark,
+        alt: 'Raindrops on a dark leaf',
+    },
+    {
+        id: 'dark-9',
+        url: unsplashUrl('photo-1511497584788-876760111969', 2070, 80),
+        thumbnailUrl: unsplashUrl('photo-1511497584788-876760111969', 200, 80),
+        type: ColorMode.Dark,
+        alt: 'Sunlight through dark tree canopies',
+    },
+    {
+        id: 'dark-10',
+        url: unsplashUrl('photo-1496614943733-144f803c15e3', 2070, 80),
+        thumbnailUrl: unsplashUrl('photo-1496614943733-144f803c15e3', 200, 80),
+        type: ColorMode.Dark,
+        alt: 'Volcanic landscape at night',
+    },
+    // --- Light Nature Themes ---
+    {
+        id: 'light-1',
+        url: unsplashUrl('photo-1433086966358-54859d0ed716', 2070, 80),
+        thumbnailUrl: unsplashUrl('photo-1433086966358-54859d0ed716', 200, 80),
+        type: ColorMode.Light,
+        alt: 'Waterfall in a green canyon',
+    },
+    {
+        id: 'light-2',
+        url: unsplashUrl('photo-1470770841072-f978cf4d019e', 2070, 80),
+        thumbnailUrl: unsplashUrl('photo-1470770841072-f978cf4d019e', 200, 80),
+        type: ColorMode.Light,
+        alt: 'Turquoise alpine lake',
+    },
+    {
+        id: 'light-3',
+        url: unsplashUrl('photo-1418065460487-3e41a6c84dc5', 2070, 80),
+        thumbnailUrl: unsplashUrl('photo-1418065460487-3e41a6c84dc5', 200, 80),
+        type: ColorMode.Light,
+        alt: 'Sunbeams in a misty forest',
+    },
+    {
+        id: 'light-4',
+        url: unsplashUrl('photo-1501854140801-50d01698950b', 2070, 80),
+        thumbnailUrl: unsplashUrl('photo-1501854140801-50d01698950b', 200, 80),
+        type: ColorMode.Light,
+        alt: 'Lush green valley',
+    },
+    {
+        id: 'light-5',
+        url: unsplashUrl('photo-1470252649378-9c29740c9fa8', 2070, 80),
+        thumbnailUrl: unsplashUrl('photo-1470252649378-9c29740c9fa8', 200, 80),
+        type: ColorMode.Light,
+        alt: 'Dew on grass at sunrise',
+    },
+    {
+        id: 'light-6',
+        url: unsplashUrl('photo-1441974231531-c6227db76b6e', 2070, 80),
+        thumbnailUrl: unsplashUrl('photo-1441974231531-c6227db76b6e', 200, 80),
+        type: ColorMode.Light,
+        alt: 'Sunlit path through the woods',
+    },
+    {
+        id: 'light-7',
+        url: unsplashUrl('photo-1426604966848-d747b714cf73', 2070, 80),
+        thumbnailUrl: unsplashUrl('photo-1426604966848-d747b714cf73', 200, 80),
+        type: ColorMode.Light,
+        alt: 'Verdant fields of tea plantations',
+    },
+    {
+        id: 'light-8',
+        url: unsplashUrl('photo-1431794062232-2a99a5431c6a', 2070, 80),
+        thumbnailUrl: unsplashUrl('photo-1431794062232-2a99a5431c6a', 200, 80),
+        type: ColorMode.Light,
+        alt: 'Canopy of jungle trees',
+    },
+    {
+        id: 'light-9',
+        url: unsplashUrl('photo-1475924156734-496f6cac6ec1', 2070, 80),
+        thumbnailUrl: unsplashUrl('photo-1475924156734-496f6cac6ec1', 200, 80),
+        type: ColorMode.Light,
+        alt: 'Sandy beach at sunrise',
+    },
+    {
+        id: 'light-10',
+        url: unsplashUrl('photo-1447752875215-b2761acb3c5d', 2070, 80),
+        thumbnailUrl: unsplashUrl('photo-1447752875215-b2761acb3c5d', 200, 80),
+        type: ColorMode.Light,
+        alt: 'Calm river in a forest',
+    },
+];

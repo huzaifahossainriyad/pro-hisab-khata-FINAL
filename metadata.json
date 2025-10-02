@@ -1,0 +1,5 @@
+{
+  "name": "Pro Hisab Khata",
+  "description": "A professional accounting web application for managing transactions, clients, and viewing financial dashboards. Built with React and TypeScript, it offers a modern, themeable interface for efficient financial tracking.",
+  "requestFramePermissions": []
+}
